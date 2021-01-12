@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type = "text/css" href="/static/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class ="container">
+        <h1>Calculator app</h1>
+    
+        <form action="{{ url_for('main.func') }}" method = "POST">
+            <label for="first_num">First number</label>
+            <input type="text" name="first_num" id="first_num" autocomplete="off">
+            
+            <label for="second_num">Second number</label>
+            <input type="text" name="second_num" id="second_num" autocomplete="off">
+    
+            <label for="operation">Operation</label>
+            <select name="operation" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="X">X</option>
+                <option value="/">/</option>
+            </select>
+    
+            <input class = "btn" type = "submit" value= "Calculate">
+            </input>
+    
+            <div class="result">{{ result }}</div>
+        </form>
+    </div>
+
+</body>
+</html>
